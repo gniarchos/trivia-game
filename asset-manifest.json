@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/trivial-game/static/css/main.3720c255.css",
+    "main.js": "/trivial-game/static/js/main.3ba126bf.js",
+    "index.html": "/trivial-game/index.html",
+    "main.3720c255.css.map": "/trivial-game/static/css/main.3720c255.css.map",
+    "main.3ba126bf.js.map": "/trivial-game/static/js/main.3ba126bf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3720c255.css",
+    "static/js/main.3ba126bf.js"
+  ]
+}
