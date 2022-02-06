@@ -141,6 +141,7 @@ label > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
 
 
 .div-quiz {
+  width: 98vw;
   padding-left: 50px;
   padding-right: 100px;
 }
@@ -191,7 +192,7 @@ hr {
 }
 
 .numberQuestions {
-  width: 30%;
+  width: 30vw;
   height: 50px;
   font-size: 1.1rem;
   text-align: center;
@@ -202,7 +203,7 @@ hr {
 }
 
 .category-options {
-  width: 30%;
+  width: 30vw;
   height: 50px;
   font-size: 1.1rem;
   text-align: center;
@@ -210,4 +211,28 @@ hr {
   border-radius: 15px;
   outline: none;
   margin-bottom: 20px;
+}
+
+@media (max-width: 675px) {
+
+  .subtitle {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .numberQuestions {
+    width: 70vw;
+  }
+  
+  .category-options {
+    width: 70vw;
+  }
+
+  .div-quiz {
+    
+    padding-left: 20px;
+    padding-right: 50px;
+  }
+
+
 }
