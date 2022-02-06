@@ -172,7 +172,7 @@ export default function App() {
 
             {gameEnded == true && <div align="center">
                <h3 className='correct-answers'>{message}</h3>
-               {String(numberCorrect).valueOf() === String(number).valueOf() && <h3 className='correct-answers'>Congratulations! You answered all the questions correct!!</h3>}
+               {String(numberCorrect).valueOf() === String(number).valueOf() && <h3 className='correct-answers'>Congratulations! You answered all the questions correctly!!</h3>}
             </div>}
 
 
