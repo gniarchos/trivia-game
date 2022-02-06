@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/trivial-game/static/css/main.be5ff73e.css",
-    "main.js": "/trivial-game/static/js/main.3ba126bf.js",
+    "main.js": "/trivial-game/static/js/main.ed330d2d.js",
     "index.html": "/trivial-game/index.html",
     "main.be5ff73e.css.map": "/trivial-game/static/css/main.be5ff73e.css.map",
-    "main.3ba126bf.js.map": "/trivial-game/static/js/main.3ba126bf.js.map"
+    "main.ed330d2d.js.map": "/trivial-game/static/js/main.ed330d2d.js.map"
   },
   "entrypoints": [
     "static/css/main.be5ff73e.css",
-    "static/js/main.3ba126bf.js"
+    "static/js/main.ed330d2d.js"
   ]
 }
