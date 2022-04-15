@@ -1,4 +1,4 @@
-# :game_die: Trivial Game
+# :game_die: Trivia Game
 
 This project was made to practice in React using  the [Open Trivia DB API](https://opentdb.com/)
 
