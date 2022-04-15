@@ -10,7 +10,7 @@ export default function Start(props) {
     return (
         <div className='wrapper'>
             <div className='title-div'>
-                <h1 className='title'>Trivial Game</h1>
+                <h1 className='title'>Trivia Game</h1>
                 <h3 className='subtitle'>Answer questions and test your knowledge!</h3>
 
                 <input className='numberQuestions' type="number" min="1" onChange={(e) =>props.handleChangeNumber(e)} placeholder='Set number of questions'></input>

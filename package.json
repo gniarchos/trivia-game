@@ -42,6 +42,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "@iconify/react": "^3.2.1",
+    "gh-pages": "^3.2.3",
+    "react-spinners": "^0.11.0"
   }
 }

@@ -4,8 +4,10 @@ import Background from "./components/Background"
 import Quiz from './components/Quiz'
 import Button from './components/Button'
 import {nanoid} from "nanoid"
-import arrayShuffle from 'array-shuffle';
+import arrayShuffle from 'array-shuffle'
 import Confetti from 'react-confetti'
+import { Icon } from '@iconify/react'
+import { GridLoader } from 'react-spinners'
 
 export default function App() {
 
@@ -20,6 +22,8 @@ export default function App() {
     const [legend, setLegend] = React.useState(false)
     const [numberCorrect, setNumberCorrect] = React.useState(0)
     localStorage.setItem("correctAnswersNum", "null")
+    const [isLoading, setIsLoading] = React.useState(true)
+
 
     function fetchNumberQuestions(event) {
         const {value} = event.target
@@ -68,7 +72,6 @@ export default function App() {
             setLoader(oldLoader => oldLoader = true)
         }
           
-        
     }
 
     function startNewGame() {
@@ -132,9 +135,13 @@ export default function App() {
                 }       
             }
 
+            setIsLoading(true)
+
             fetch(api)
                 .then(res => res.json())
-                .then(data => setQuestions(data.results.map(item => ({
+                .then(data => {
+                    
+                    setQuestions(data.results.map(item => ({
                     key: nanoid(),
                     question: item.question,
                     correct_answer: item.correct_answer,
@@ -143,11 +150,11 @@ export default function App() {
                     type: item.type,
                     answers: arrayShuffle(item.incorrect_answers.concat(item.correct_answer)),
                     // handleSelected: handleSelected
-                    
-                }))))
+                })))
 
+                setIsLoading(false)
 
-            // setLoader(false)
+            })
 
     }, [isStarted])
 
@@ -159,20 +166,37 @@ export default function App() {
     // }, [])
 
     // console.log(questions)
+    function gotoGithub() {
+        window.location.href='https://github.com/gniarchos/trivial-game'
+    }
+
+    const override = `
+    display: block;
+    margin: 0 auto;
+  `;
 
     return (
-        <main>     
+        <main> 
+            {isStarted === false && <div className='github-main'>
+                <Icon onClick={gotoGithub} className='git-img' icon="ant-design:github-filled" width="29" />
+            </div>}
+                
             {String(numberCorrect).valueOf() === String(number).valueOf() && <Confetti />}
             <Background />
-            {isStarted == false && <Start handleClick= {createNewGame} handleChangeNumber={fetchNumberQuestions} handleChangeCategory={fetchCategory} handleChangeDifficulty={fetchDifficulty} numQuestions={number}/>}
+            {isStarted === false && <Start handleClick= {createNewGame} handleChangeNumber={fetchNumberQuestions} handleChangeCategory={fetchCategory} handleChangeDifficulty={fetchDifficulty} numQuestions={number}/>}
 
             {/* {loader == true && <div className='loader'><BallTriangle color="#293264" height={120} width={120} /></div>} */}
-            {isStarted == true && <Quiz Data={questions} ended={gameEnded} numQuestions={number}/>}
-            {isStarted == true && <Button ended= {gameEnded} startNewGame = {startNewGame} showResults = {showResults} />}
+            {isStarted === true && isLoading === true && 
+                <div className='loader-div'>
+                    <GridLoader color={'#293264'} css={override} size={40}/>
+                    <h2 style={{color: "#293264"}} >Please wait. . . </h2>
+                </div>}
+            {isStarted === true && isLoading === false && <Quiz Data={questions} ended={gameEnded} numQuestions={number}/>}
+            {isStarted === true && isLoading === false && <Button ended= {gameEnded} startNewGame = {startNewGame} showResults = {showResults} />}
 
-            {gameEnded == true && <div align="center">
+            {gameEnded === true && <div align="center">
                <h3 className='correct-answers'>{message}</h3>
-               {String(numberCorrect).valueOf() === String(number).valueOf() && <h3 className='correct-answers'>Congratulations! You answered all the questions correctly!!</h3>}
+               {String(numberCorrect).valueOf() === String(number).valueOf() && <h3 className='correct-answers-all'>Congratulations! You answered all the questions correctly!!</h3>}
             </div>}
 
 

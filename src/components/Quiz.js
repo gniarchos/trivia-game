@@ -1,5 +1,7 @@
 import React from 'react'
-import { decode } from "html-entities";
+import { decode } from "html-entities"
+import Navbar from './Navbar'
+
 
 
 export default function Quiz(props) {
@@ -73,158 +75,91 @@ export default function Quiz(props) {
     }, [props.ended])
 
     return (
-        <div>
-            {props.Data.map((item, index) => {
-                    return (
-                        <div className="div-quiz" key={index}>
-                        <h3 className='question'>{decode(item.question)}</h3>
-                        {/* <p>Correct: {item.correct_answer}</p> */}
+        <div className='quiz-container'>
+            <Navbar />
+            <div className='quiz-div-wrapper'>
+                
+                {props.Data.map((item, index) => {
+                        return (
+                            <div className="div-quiz" key={index}>
+                            <h3 className='question'>{decode(item.question)}</h3>
+                            {/* <p>Correct: {item.correct_answer}</p> */}
 
-                        <label>
+                            <label>
+                                <input
+                                    type="radio"
+                                    disabled={props.ended === true ? true : false}
+                                    className='buttonGroup'
+                                    name={`answer option-${item.question}`}
+                                    id={`answer-options-${index}`}
+                                    value={decode(item.answers[0])}
+                                    onChange={(e) => handleSelectedAnswer(e, index)}
+                                    
+                                />
+                                <div style={
+                                {backgroundColor : props.ended === true && decode(item.answers[0]) === decode(item.correct_answer) ? "#94D7A2" : "none",
+                                color: props.ended === true && decode(item.answers[0]) === decode(item.correct_answer) && "white", 
+                                border: props.ended === true && decode(item.answers[0]) === decode(item.correct_answer) && "2px solid #94D7A2" }}>{decode(item.answers[0])}</div>
+                            </label>
+
+                            <label>
                             <input
-                                type="radio"
-                                disabled={props.ended === true ? true : false}
-                                className='buttonGroup'
-                                name={`answer option-${item.question}`}
-                                id={`answer-options-${index}`}
-                                value={decode(item.answers[0])}
-                                onChange={(e) => handleSelectedAnswer(e, index)}
-                                
-                            />
-                            <div style={
-                            {backgroundColor : props.ended === true && decode(item.answers[0]) === decode(item.correct_answer) ? "#94D7A2" : "none",
-                            color: props.ended === true && decode(item.answers[0]) === decode(item.correct_answer) && "white", 
-                            border: props.ended === true && decode(item.answers[0]) === decode(item.correct_answer) && "2px solid #94D7A2" }}>{decode(item.answers[0])}</div>
-                        </label>
+                                    type="radio"
+                                    disabled={props.ended === true ? true : false}
+                                    className='buttonGroup'
+                                    name={`answer option-${item.question}`}
+                                    id={`answer-options-${index}`}
+                                    value={decode(item.answers[1])}
+                                    onChange={(e) => handleSelectedAnswer(e, index)}
+                                    
+                                />
+                                <div style={
+                                {backgroundColor : props.ended === true && decode(item.answers[1]) === decode(item.correct_answer) ? "#94D7A2" : "none",
+                                color: props.ended === true && decode(item.answers[1]) === decode(item.correct_answer) && "white", 
+                                border: props.ended === true && decode(item.answers[1]) === decode(item.correct_answer) && "2px solid #94D7A2" }}>{decode(item.answers[1])}</div>
+                            </label>
 
-                        <label>
-                        <input
-                                type="radio"
-                                disabled={props.ended === true ? true : false}
-                                className='buttonGroup'
-                                name={`answer option-${item.question}`}
-                                id={`answer-options-${index}`}
-                                value={decode(item.answers[1])}
-                                onChange={(e) => handleSelectedAnswer(e, index)}
-                                
-                            />
-                            <div style={
-                            {backgroundColor : props.ended === true && decode(item.answers[1]) === decode(item.correct_answer) ? "#94D7A2" : "none",
-                            color: props.ended === true && decode(item.answers[1]) === decode(item.correct_answer) && "white", 
-                            border: props.ended === true && decode(item.answers[1]) === decode(item.correct_answer) && "2px solid #94D7A2" }}>{decode(item.answers[1])}</div>
-                        </label>
+                            {item.type != "boolean" && <label>
+                            <input
+                                    type="radio"
+                                    disabled={props.ended === true ? true : false}
+                                    className='buttonGroup'
+                                    name={`answer option-${item.question}`}
+                                    id={`answer-options-${index}`}
+                                    value={decode(item.answers[2])}
+                                    onChange={(e) => handleSelectedAnswer(e, index)}
+                                    
+                                />
+                                <div style={
+                                {backgroundColor : props.ended === true && decode(item.answers[2]) === decode(item.correct_answer) ? "#94D7A2" : "none",
+                                color: props.ended === true && decode(item.answers[2]) === decode(item.correct_answer) && "white", 
+                                border: props.ended === true && decode(item.answers[2]) === decode(item.correct_answer) && "2px solid #94D7A2" }}>{decode(item.answers[2])}</div>
+                            </label>}
 
-                        {item.type != "boolean" && <label>
-                        <input
-                                type="radio"
-                                disabled={props.ended === true ? true : false}
-                                className='buttonGroup'
-                                name={`answer option-${item.question}`}
-                                id={`answer-options-${index}`}
-                                value={decode(item.answers[2])}
-                                onChange={(e) => handleSelectedAnswer(e, index)}
-                                
-                            />
-                            <div style={
-                            {backgroundColor : props.ended === true && decode(item.answers[2]) === decode(item.correct_answer) ? "#94D7A2" : "none",
-                            color: props.ended === true && decode(item.answers[2]) === decode(item.correct_answer) && "white", 
-                            border: props.ended === true && decode(item.answers[2]) === decode(item.correct_answer) && "2px solid #94D7A2" }}>{decode(item.answers[2])}</div>
-                        </label>}
+                            {item.type != "boolean" && <label>
+                            <input
+                                    type="radio"
+                                    disabled={props.ended === true ? true : false}
+                                    className='buttonGroup'
+                                    name={`answer option-${item.question}`}
+                                    id={`answer-options-${index}`}
+                                    value={decode(item.answers[3])}
+                                    onChange={(e) => handleSelectedAnswer(e, index)}
+                                    
+                                />
+                                <div style={
+                                {backgroundColor : props.ended === true && decode(item.answers[3]) === decode(item.correct_answer) ? "#94D7A2" : "none",
+                                color: props.ended === true && decode(item.answers[3]) === decode(item.correct_answer) && "white", 
+                                border: props.ended === true && decode(item.answers[3]) === decode(item.correct_answer) && "2px solid #94D7A2" }}>{decode(item.answers[3])}</div>
+                            </label>}
+                            
+                            <hr/>
+                            </div>
+                        );
+                        })}
 
-                        {item.type != "boolean" && <label>
-                        <input
-                                type="radio"
-                                disabled={props.ended === true ? true : false}
-                                className='buttonGroup'
-                                name={`answer option-${item.question}`}
-                                id={`answer-options-${index}`}
-                                value={decode(item.answers[3])}
-                                onChange={(e) => handleSelectedAnswer(e, index)}
-                                
-                            />
-                            <div style={
-                            {backgroundColor : props.ended === true && decode(item.answers[3]) === decode(item.correct_answer) ? "#94D7A2" : "none",
-                            color: props.ended === true && decode(item.answers[3]) === decode(item.correct_answer) && "white", 
-                            border: props.ended === true && decode(item.answers[3]) === decode(item.correct_answer) && "2px solid #94D7A2" }}>{decode(item.answers[3])}</div>
-                        </label>}
-                        
-                        <hr/>
-                        </div>
-                    );
-                    })}
-
+            </div>
         </div>
-        
     )
    
 }
-
-{/* <input
-                            type="radio"
-                            disabled={props.ended === true ? true : false}
-                            className='buttonGroup'
-                            name={`answer option-${item.question}`}
-                            id={`answer-options-${index}`}
-                            value={decode(item.answers[0])}
-                            onChange={(e) => handleSelectedAnswer(e, index)}
-                            
-                        />
-                        <label style={
-                            {backgroundColor : props.ended === true && decode(item.answers[0]) === decode(item.correct_answer) ? "#94D7A2" : "none",
-                            color: props.ended === true && decode(item.answers[0]) === item.correct_answer && "white", 
-                            border: props.ended === true && decode(item.answers[0]) === decode(item.correct_answer) && "2px solid #51c96a" }}
-                        >
-                            {decode(item.answers[0])}
-                        </label>
-
-                        <input
-                            type="radio"
-                            disabled={props.ended === true ? true : false}
-                            className='buttonGroup'
-                            name={`answer option-${item.question}`}
-                            id={`answer-options-${index}`}
-                            value={decode(item.answers[1])}
-                            onChange={(e) => handleSelectedAnswer(e, index)}
-                        />
-                        <label style={
-                            {backgroundColor : props.ended === true && decode(item.answers[1]) === decode(item.correct_answer) ? "#94D7A2" : "none",
-                            color: props.ended === true && decode(item.answers[1]) === decode(item.correct_answer) && "white", 
-                            border: props.ended === true && decode(item.answers[1]) === decode(item.correct_answer)  && "2px solid #51c96a" }}
-                        >
-                            {decode(item.answers[1])}
-                        </label>
-
-
-                        {item.type != "boolean" && <input
-                            type="radio"
-                            disabled={props.ended === true ? true : false}
-                            className='buttonGroup'
-                            name={`answer option-${item.question}`}
-                            id={`answer-options-${index}`}
-                            value={decode(item.answers[2])}
-                            onChange={(e) => handleSelectedAnswer(e, index)}
-                        />}
-                        {item.type != "boolean" && <label style={
-                            {backgroundColor : props.ended === true && decode(item.answers[2]) === decode(item.correct_answer) ? "#94D7A2" : "none", 
-                            color: props.ended === true && decode(item.answers[2]) === decode(item.correct_answer) && "white", 
-                            border: props.ended === true && decode(item.answers[2]) === decode(item.correct_answer)  && "2px solid #51c96a"}}
-                        >
-                            {decode(item.answers[2])}
-                        </label>}
-
-                        {item.type != "boolean" && <input
-                            type="radio"
-                            disabled={props.ended === true ? true : false}
-                            className='buttonGroup'
-                            name={`answer option-${item.question}`}
-                            id={`answer-options-${index}`}
-                            value={decode(item.answers[3])}
-                            onChange={(e) => handleSelectedAnswer(e, index)}
-                        />}
-                        {item.type != "boolean" && <label style={
-                            {backgroundColor : props.ended === true && decode(item.answers[3]) === decode(item.correct_answer) ? "#94D7A2" : "none",
-                            color: props.ended === true && decode(item.answers[3]) === decode(item.correct_answer) && "white", 
-                            border: props.ended === true && decode(item.answers[3]) === decode(item.correct_answer)  && "2px solid #51c96a"}}
-                        >
-                            {decode(item.answers[3])}
-                        </label>} */}
