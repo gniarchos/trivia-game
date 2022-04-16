@@ -4,7 +4,7 @@ This project was made to practice in React using  the [Open Trivia DB API](https
 
 ##  :video_game: How to play
 
-:black_small_square: Select trivial properties <br />
+:black_small_square: Select trivia properties <br />
 :black_small_square: Answer all the questions and press Show Results to see how many correct answers you got
 
 ##  :hammer_and_wrench: Features
