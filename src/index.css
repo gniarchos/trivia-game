@@ -4,10 +4,9 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-
 body {
   margin: 0;
-  background-color: #F5F7FB;
+  background-color: #f5f7fb;
 }
 
 .start-wrapper {
@@ -16,7 +15,7 @@ body {
   justify-items: center;
 }
 
-.background{
+.background {
   height: 100vh;
   left: 0;
   position: fixed;
@@ -25,15 +24,14 @@ body {
   z-index: -1;
 }
 
-#background1{
+#background1 {
   height: 100vh;
   background-image: url(images/yellow-bg-big.png);
   background-repeat: no-repeat;
   background-position-x: right;
-
 }
 
-#background2{
+#background2 {
   height: 100vh;
   background-image: url(images/blue-bg-big.png);
   background-repeat: no-repeat;
@@ -63,46 +61,38 @@ body {
 }
 
 .start-btn {
-  /* background: #4D5B9E; */
   border-radius: 15px;
   border: none;
-  color: #F5F7FB;
+  color: #f5f7fb;
   width: 200px;
   height: 50px;
   font-size: 1.5rem;
   margin-top: 50px;
-  /* cursor: not-allowed; */
-
 }
 
 .span {
   margin-right: 20px;
-  
   padding: 10px;
   border: 2px solid gray;
   cursor: pointer;
-  /* background-color: none; */
 }
 
-.buttonGroup { 
-  /* display:none;  */
+.buttonGroup {
   margin-left: 20px;
   position: relative;
   top: 3px;
-
   appearance: none;
   background-color: #fff;
-  /* margin: 0; */
   font: inherit;
   color: currentColor;
   width: 1em;
   height: 1em;
-  border: 0.15em solid #4D5B9E;
+  border: 0.15em solid #4d5b9e;
   border-radius: 50%;
 }
 
 label {
-  display:inline-block;
+  display: inline-block;
   height: 20px;
   position: relative;
   bottom: 20px;
@@ -110,36 +100,35 @@ label {
   color: #293264;
   margin-left: -20px;
   margin-right: 20px;
-  
 }
 
-label > input { /* HIDE RADIO */
+label > input {
+  /* HIDE RADIO */
   visibility: hidden; /* Makes input not-clickable */
   position: absolute; /* Remove input from document flow */
-  
 }
 
-label > input + div{ /* DIV STYLES */
-  cursor:pointer;
-  /* border:2px solid transparent; */
-  text-align:center;
-  padding:10px;
+label > input + div {
+  /* DIV STYLES */
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
   margin-left: 20px;
   border-radius: 12px;
-  border: 2px solid #4D5B9E;
+  border: 2px solid #4d5b9e;
   line-height: 12px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 label > input + div:hover {
-  background-color: #D6DBF5;
+  background-color: #d6dbf5;
 }
 
-label > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
-  background-color: #D6DBF5;
-  /* border: 2px solid #4D5B9E; */
-  border: 2px solid #D6DBF5;; 
-  color: #4D5B9E;
+label > input:checked + div {
+  /* (RADIO CHECKED) DIV STYLES */
+  background-color: #d6dbf5;
+  border: 2px solid #d6dbf5;
+  color: #4d5b9e;
 }
 
 .quiz-container {
@@ -151,7 +140,7 @@ label > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
 .quiz-div-wrapper {
   backdrop-filter: blur(2px);
   background-color: rgb(255, 255, 255); /* Fallback color */
-  background-color: rgba(255,255,255,0.4); /* Black w/ opacity */
+  background-color: rgba(255, 255, 255, 0.4); /* Black w/ opacity */
 }
 
 .div-quiz {
@@ -159,7 +148,7 @@ label > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
 }
 
 hr {
-  border: 0.794239px solid #DBDEF0;
+  border: 0.794239px solid #dbdef0;
   transform: rotate(-0.05deg);
 }
 
@@ -174,10 +163,10 @@ hr {
 }
 
 .results-btn {
-  background: #4D5B9E;
+  background: #4d5b9e;
   border-radius: 15px;
   border: none;
-  color: #F5F7FB;
+  color: #f5f7fb;
   width: 180px;
   height: 50px;
   font-size: 1.4rem;
@@ -186,10 +175,10 @@ hr {
 }
 
 .newGame-btn {
-  background: #4D5B9E;
+  background: #4d5b9e;
   border-radius: 15px;
   border: none;
-  color: #F5F7FB;
+  color: #f5f7fb;
   width: 160px;
   height: 40px;
   font-size: 1.3rem;
@@ -199,7 +188,7 @@ hr {
 
 .correct-answers {
   margin-top: -30px;
-  color: #293264
+  color: #293264;
 }
 
 .correct-answers-all {
@@ -207,7 +196,6 @@ hr {
 }
 
 .loader {
-  /* width: 100vw; */
   position: absolute;
   left: 48.5%;
   top: 35%;
@@ -237,14 +225,13 @@ hr {
 
 .navbar {
   position: fixed;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
-  /* border-bottom: 0.5px solid #293264; */
   background-color: #ffffff;
   color: #293264;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -298,12 +285,9 @@ hr {
   justify-content: center;
   align-items: center;
   margin-top: 200px;
-  /* position: relative; */
-  /* top: 200px; */
 }
 
 @media (max-width: 675px) {
-
   .subtitle {
     font-size: 1.4rem;
     text-align: center;
@@ -312,7 +296,7 @@ hr {
   .numberQuestions {
     width: 70vw;
   }
-  
+
   .category-options {
     width: 70vw;
     background-color: white;
@@ -328,6 +312,4 @@ hr {
   .results-btn {
     width: 200px;
   }
-
-
 }
