@@ -16,8 +16,8 @@ Made with React.
 - Set the questions category (optional)
 - Set the questions difficulty (optional)
 - See the number of correct answers
-- Comfetti when you answered all the questions correctly
-- PWA (standalone app) compatible
+- Confetti when you answered all the questions correctly
+- PWA (standalone app) compatibility
 
 ## 🚧 Made with
 
