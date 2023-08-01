@@ -1,15 +1,29 @@
-# :game_die: Trivia Game
+# 🎲 Trivia Game
 
-This project was made to practice in React using  the [Open Trivia DB API](https://opentdb.com/)
+This project was made to practice in React using the [Open Trivia DB API](https://opentdb.com/)
 
-##  :video_game: How to play
+Made with React.
 
-:black_small_square: Select trivia properties <br />
-:black_small_square: Answer all the questions and press Show Results to see how many correct answers you got
+## 🎮 How to play
 
-##  :hammer_and_wrench: Features
-- [x] Set the number of questions <br />
-- [x] Set the questions category (optional) <br />
-- [x] Set the questions difficulty (optional) <br />
-- [x] See the number of correct answers <br />
-- [x] Comfetti when you answered all the questions correctly
+    1. Select trivia properties
+    2. Answer all the questions
+    3. Press "Show Results" to see how many correct answers you got
+
+## 🛠️ Features
+
+- Set the number of questions
+- Set the questions category (optional)
+- Set the questions difficulty (optional)
+- See the number of correct answers
+- Comfetti when you answered all the questions correctly
+- PWA (standalone app) compitable
+
+## 🚧 Made with
+
+<div >
+	<img width="50" src="https://user-images.githubusercontent.com/25181517/192158954-f88b5814-d510-4564-b285-dff7d6400dad.png" alt="HTML" title="HTML"/>
+	<img width="50" src="https://user-images.githubusercontent.com/25181517/183898674-75a4a1b1-f960-4ea9-abcb-637170a00a75.png" alt="CSS" title="CSS"/>
+	<img width="50" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript"/>
+	<img width="50" src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React" title="React"/>
+</div>
