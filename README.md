@@ -17,7 +17,7 @@ Made with React.
 - Set the questions difficulty (optional)
 - See the number of correct answers
 - Comfetti when you answered all the questions correctly
-- PWA (standalone app) compitable
+- PWA (standalone app) compatible
 
 ## 🚧 Made with
 
